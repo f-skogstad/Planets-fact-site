@@ -1,9 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FactsCard from '@components/FactsCard.astro';
 ---
 
 <Layout title='Mercury'>
-  <main class='background'>
-    <h1>Hello</h1>
+  <main class='container mx-auto'>
+    <div class='grid grid-cols-2 place-content-center'>
+      <img src='/planet-mercury.svg' alt='planet-mercury' class='mx-auto' />
+      <FactsCard />
+    </div>
   </main>
 </Layout>

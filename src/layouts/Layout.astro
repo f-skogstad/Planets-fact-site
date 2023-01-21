@@ -30,15 +30,61 @@ const { title } = Astro.props;
 </html>
 
 <style>
-  * {
-    font-family: 'Antonio', sans-serif;
-    font-family: 'League Spartan', sans-serif;
-  }
-
   .background {
     background: url('/background-stars.svg') no-repeat center center fixed;
     background-size: cover;
     background-color: #070724;
     height: 100vh;
+  }
+</style>
+
+<style is:global>
+  * {
+    font-family: theme(fontFamily.body);
+  }
+
+  h1 {
+    font-size: theme('fontSize.h1');
+    line-height: theme('lineHeight.h1');
+    color: theme('colors.white');
+    font-family: theme(fontFamily.heading);
+  }
+  h2 {
+    font-size: theme('fontSize.h2');
+    line-height: theme('lineHeight.h2');
+    letter-spacing: theme('letterSpacing.h2');
+    color: theme('colors.white');
+    font-family: theme(fontFamily.heading);
+  }
+  h3 {
+    font-size: theme('fontSize.h3');
+    line-height: theme('lineHeight.h3');
+    letter-spacing: theme('letterSpacing.h3');
+    color: theme('colors.white');
+    font-family: theme(fontFamily.heading);
+  }
+  h4 {
+    font-size: theme('fontSize.h4');
+    line-height: theme('lineHeight.h4');
+    letter-spacing: theme('letterSpacing.h4');
+    color: theme('colors.white');
+    font-family: theme(fontFamily.heading);
+  }
+  p {
+    font-size: theme('fontSize.body');
+    line-height: theme('lineHeight.body');
+    color: theme('colors.white');
+  }
+  a {
+    font-size: theme('fontSize.body');
+    color: theme('colors.white');
+    line-height: theme('lineHeight.h3');
+    letter-spacing: theme('letterSpacing.h3');
+    font-family: theme(fontFamily.heading);
+    padding: 0.5rem 0.8rem;
+    border-radius: 100px;
+  }
+  a:hover {
+    background-color: theme('colors.dark-grey');
   }
 </style>

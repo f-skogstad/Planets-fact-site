@@ -8,6 +8,8 @@ module.exports = {
     colors: {
       white: '#fff',
       'dark-blue': '#070724',
+      'dark-grey': '#38384F',
+      grey: '#838391',
     },
     fontSize: {
       body: '14px',
@@ -24,9 +26,13 @@ module.exports = {
       h1: '103px',
     },
     letterSpacing: {
-      h4: '1',
-      h3: '2.6',
-      h2: '-1.5',
+      h4: '1px',
+      h3: '2.6px',
+      h2: '-1.5px',
+    },
+    fontFamily: {
+      heading: ['Antonio', 'sans-serif'],
+      body: ['League Spartan', 'sans-serif'],
     },
     extend: {},
   },
