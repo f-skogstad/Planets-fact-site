@@ -1,13 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FactsCard from '@components/FactsCard.astro';
+import data from '@data/data.json';
+
+const planet = data.find((x) => x.name === 'Mercury');
 ---
 
 <Layout title='Mercury'>
   <main class='container mx-auto'>
-    <div class='grid grid-cols-2 place-content-center'>
+    <div class='grid grid-cols-2'>
       <img src='/planet-mercury.svg' alt='planet-mercury' class='mx-auto' />
-      <FactsCard />
+      <FactsCard planet={planet} />
     </div>
   </main>
 </Layout>
