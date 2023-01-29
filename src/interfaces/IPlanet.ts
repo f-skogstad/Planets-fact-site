@@ -1,5 +1,5 @@
 export default interface IPlanet {
-  name: string;
+  name?: string;
   overview?: {
     content: string;
     source: string;
