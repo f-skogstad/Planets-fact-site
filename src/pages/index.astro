@@ -13,7 +13,13 @@ const mercury: IPlanet = data.find((x) => x.name === 'Mercury');
   <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
     <div class='grid grid-cols-2'>
       <img src='/planet-mercury.svg' alt='planet-mercury' class='mx-auto' />
-      <FactsCard client:load name={mercury.name} overview={mercury.overview} />
+      <FactsCard
+        client:load
+        name={mercury.name}
+        overview={mercury.overview}
+        structure={mercury.structure}
+        geology={mercury.geology}
+      />
     </div>
     <FactsRow
       rotation={mercury.rotation}

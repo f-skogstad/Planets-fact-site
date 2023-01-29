@@ -10,6 +10,7 @@ export default interface IPlanet {
   };
   geology?: {
     content: string;
+    source: string;
   };
   rotation?: string;
   revolution?: string;
