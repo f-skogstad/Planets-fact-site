@@ -25,11 +25,11 @@ module.exports = {
       blue: '#2D68F0',
     },
     fontSize: {
-      body: '14px',
-      h4: '12px',
-      h3: '14px',
-      h2: '40px',
-      h1: '80px',
+      body: '1rem',
+      h4: '0.9rem',
+      h3: '1rem',
+      h2: '2.5rem',
+      h1: '5rem',
     },
     lineHeight: {
       body: '25px',
