@@ -46,7 +46,12 @@ const FactsCard: Component<IPlanet> = ({
         <h1 class='uppercase'>{name}</h1>
         <p>{content}</p>
 
-        <p>{source}</p>
+        <div class='flex items-center'>
+          <p class='opacity-50'>Source: </p>
+          <h4 class='opacity-50'>
+            <a href={source()}>Wikipedia</a>
+          </h4>
+        </div>
 
         <div class='flex flex-col gap-4'>
           <button

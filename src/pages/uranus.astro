@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '@data/data.json';
+import IPlanet from '@interfaces/IPlanet';
+
+import FactsCard from '@components/FactsCard';
+import FactsRow from '@components/FactsRow';
+
+const uranus: IPlanet = data.find((x) => x.name === 'Uranus');
+---
+
+<Layout title='Uranus'>
+  <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
+    <FactsCard
+      client:load
+      name={uranus.name}
+      overview={uranus.overview}
+      structure={uranus.structure}
+      geology={uranus.geology}
+      images={uranus.images}
+    />
+    <FactsRow
+      rotation={uranus.rotation}
+      revolution={uranus.revolution}
+      radius={uranus.radius}
+      temperature={uranus.temperature}
+    />
+  </main>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '@data/data.json';
+import IPlanet from '@interfaces/IPlanet';
+
+import FactsCard from '@components/FactsCard';
+import FactsRow from '@components/FactsRow';
+
+const venus: IPlanet = data.find((x) => x.name === 'Venus');
+---
+
+<Layout title='Venus'>
+  <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
+    <FactsCard
+      client:load
+      name={venus.name}
+      overview={venus.overview}
+      structure={venus.structure}
+      geology={venus.geology}
+      images={venus.images}
+    />
+    <FactsRow
+      rotation={venus.rotation}
+      revolution={venus.revolution}
+      radius={venus.radius}
+      temperature={venus.temperature}
+    />
+  </main>
+</Layout>

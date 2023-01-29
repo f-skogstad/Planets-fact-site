@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '@data/data.json';
+import IPlanet from '@interfaces/IPlanet';
+
+import FactsCard from '@components/FactsCard';
+import FactsRow from '@components/FactsRow';
+
+const mars: IPlanet = data.find((x) => x.name === 'Mars');
+---
+
+<Layout title='Mars'>
+  <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
+    <FactsCard
+      client:load
+      name={mars.name}
+      overview={mars.overview}
+      structure={mars.structure}
+      geology={mars.geology}
+      images={mars.images}
+    />
+    <FactsRow
+      rotation={mars.rotation}
+      revolution={mars.revolution}
+      radius={mars.radius}
+      temperature={mars.temperature}
+    />
+  </main>
+</Layout>

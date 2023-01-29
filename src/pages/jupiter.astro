@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import data from '@data/data.json';
+import IPlanet from '@interfaces/IPlanet';
+
+import FactsCard from '@components/FactsCard';
+import FactsRow from '@components/FactsRow';
+
+const jupiter: IPlanet = data.find((x) => x.name === 'Jupiter');
+---
+
+<Layout title='Jupiter'>
+  <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
+    <FactsCard
+      client:load
+      name={jupiter.name}
+      overview={jupiter.overview}
+      structure={jupiter.structure}
+      geology={jupiter.geology}
+      images={jupiter.images}
+    />
+    <FactsRow
+      rotation={jupiter.rotation}
+      revolution={jupiter.revolution}
+      radius={jupiter.radius}
+      temperature={jupiter.temperature}
+    />
+  </main>
+</Layout>
