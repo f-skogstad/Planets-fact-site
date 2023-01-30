@@ -40,36 +40,41 @@ const FactsCard: Component<IPlanet> = ({
   });
 
   return (
-    <section class='grid grid-cols-2'>
+    <section class='grid lg:grid-cols-2 '>
       <img src={planetImg()} alt='planet-mercury' class='m-auto' />
-      <div class='flex flex-col gap-4 max-w-sm mx-auto'>
-        <h1 class='uppercase'>{name}</h1>
-        <p>{content}</p>
 
-        <div class='flex items-center gap-2'>
-          <p class='opacity-50'>Source:</p>
-          <p class='opacity-50 flex'>
-            <a href={source()} class='font-bold underline flex gap-1'>
-              Wikipedia
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke-width='1.5'
-                stroke='currentColor'
-                class='w-4 h-4 text-white'
-              >
-                <path
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  d='M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244'
-                />
-              </svg>
-            </a>
-          </p>
+      <div class='flex items-center justify-between mx-auto lg:gap-4 lg:flex-col lg:max-w-sm'>
+        <div class='flex-1'>
+          <div>
+            <h1 class='uppercase'>{name}</h1>
+            <p>{content}</p>
+          </div>
+
+          <div class='flex items-center gap-2'>
+            <p class='opacity-50'>Source:</p>
+            <p class='opacity-50 inline-block'>
+              <a href={source()} class='font-bold underline flex gap-1'>
+                Wikipedia
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  class='w-4 h-4 text-white'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244'
+                  />
+                </svg>
+              </a>
+            </p>
+          </div>
         </div>
 
-        <div class='flex flex-col gap-4'>
+        <div class='flex flex-col gap-4 flex-1 w-full'>
           <button
             class={activeBtn() === 'one' ? activeBtnStyle : btnStyle}
             onClick={() => setActiveBtn('one')}
