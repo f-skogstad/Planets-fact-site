@@ -10,7 +10,7 @@ const neptune: IPlanet = data.find((x) => x.name === 'Neptune');
 ---
 
 <Layout title='Neptune'>
-  <main class='container mx-auto flex flex-col h-3/4 justify-evenly'>
+  <main class='container mx-auto grid gap-4'>
     <FactsCard
       client:load
       name={neptune.name}

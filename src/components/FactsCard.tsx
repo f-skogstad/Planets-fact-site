@@ -34,17 +34,16 @@ const FactsCard: Component<IPlanet> = ({
         setContent(geology.content);
         setSource(geology.source);
         setPlanetImg(images.geology);
-      default:
         break;
     }
   });
 
   return (
-    <section class='grid lg:grid-cols-2 '>
-      <img src={planetImg()} alt='planet-mercury' class='m-auto' />
+    <section class='grid lg:grid-cols-2 mb-4 md:mb-6 lg:mb-20 mt-10 md:mt-20'>
+      <img src={planetImg()} alt='planet-mercury' class='m-auto w-xs md:w-sm' />
 
-      <div class='flex items-center justify-between mx-auto lg:gap-4 lg:flex-col lg:max-w-sm'>
-        <div class='flex-1'>
+      <div class=' flex flex-col md:flex-row lg:flex-col items-center mx-auto gap-4 lg:max-w-sm'>
+        <div class='basis-1/2'>
           <div>
             <h1 class='uppercase'>{name}</h1>
             <p>{content}</p>
@@ -74,7 +73,7 @@ const FactsCard: Component<IPlanet> = ({
           </div>
         </div>
 
-        <div class='flex flex-col gap-4 flex-1 w-full'>
+        <div class='flex flex-col gap-4 basis-1/2 w-full'>
           <button
             class={activeBtn() === 'one' ? activeBtnStyle : btnStyle}
             onClick={() => setActiveBtn('one')}

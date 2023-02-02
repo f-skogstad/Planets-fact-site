@@ -3,11 +3,66 @@ const navItemStyle =
   'uppercase py-2 px-4 rounded-full hover:bg-dark-grey text-h3 leading-h3 tracking-h3 text-white font-heading font-bold';
 ---
 
+<!-- Mobile menu button-->
+<nav class='sm:hidden flex justify-between items-center mx-6 text-white'>
+  <h2 class='uppercase'>The planets</h2>
+  <button
+    type='button'
+    class='inline-flex items-center justify-center rounded-md p-2 hover:text-grey focus:text-grey'
+    aria-controls='mobile-menu'
+    aria-expanded='false'
+  >
+    <span class='sr-only'>Open main menu</span>
+    <!--
+    Icon when menu is closed.
+
+    Heroicon name: outline/bars-3
+
+    Menu open: "hidden", Menu closed: "block"
+  -->
+    <svg
+      class='block h-6 w-6'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      aria-hidden='true'
+    >
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
+    </svg>
+    <!--
+    Icon when menu is open.
+
+    Heroicon name: outline/x-mark
+
+    Menu open: "block", Menu closed: "hidden"
+  -->
+    <svg
+      class='hidden h-6 w-6'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      aria-hidden='true'
+    >
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M6 18L18 6M6 6l12 12'></path>
+    </svg>
+  </button>
+</nav>
+
 <nav
-  class='flex flex-col items-center justify-between h-28 lg:h-20 mx-6 lg:flex-row mb-20'
+  class='hidden md:flex flex-col items-center justify-between h-28 lg:h-20 mx-6 lg:flex-row'
 >
   <h2 class='uppercase'>The planets</h2>
-  <ul class='flex justify-between items-center gap-4'>
+  <ul class='flex justify-between items-center'>
     <li>
       <a href='index.html' class={navItemStyle}>Mercury</a>
     </li>

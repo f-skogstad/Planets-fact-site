@@ -7,6 +7,7 @@ module.exports = {
     },
     colors: {
       white: '#fff',
+      grey: '#838391',
     },
     borderColor: {
       grey: '#838391',
@@ -25,9 +26,9 @@ module.exports = {
       blue: '#2D68F0',
     },
     fontSize: {
-      body: '1rem',
-      h4: '0.9rem',
-      h3: '1rem',
+      body: '0.9rem',
+      h4: '0.8rem',
+      h3: '0.9rem',
       h2: '2.5rem',
       h1: '5rem',
     },
