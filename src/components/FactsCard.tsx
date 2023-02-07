@@ -1,20 +1,29 @@
 import { Component, createSignal, createEffect } from 'solid-js';
 import IPlanet from '@interfaces/IPlanet';
 
-const FactsCard: Component<IPlanet> = ({
+type Props = {
+  name: IPlanet['name'];
+  overview: IPlanet['overview'];
+  structure: IPlanet['structure'];
+  geology: IPlanet['geology'];
+  images: IPlanet['images'];
+  btnColor: string;
+};
+
+const FactsCard: Component<Props> = ({
   name,
   overview,
   structure,
   geology,
   images,
+  btnColor,
 }) => {
-  const [activeBtn, setActiveBtn] = createSignal('one');
+  const [activeBtn, setActiveBtn] = createSignal('three');
   const [content, setContent] = createSignal(overview.content);
   const [source, setSource] = createSignal(overview.source);
   const [planetImg, setPlanetImg] = createSignal(images.planet);
 
-  const activeBtnStyle =
-    'flex justify-start items-center gap-8 pl-10 py-2 border border-grey/50 bg-azure-blue hover:bg-azure-blue';
+  const activeBtnStyle = `flex justify-start items-center gap-8 pl-10 py-2 border border-grey/50 ${btnColor} hover:${btnColor}`;
   const btnStyle =
     'flex justify-start items-center gap-8 pl-10 py-2 border border-grey/50 hover:bg-dark-grey';
 
@@ -33,7 +42,7 @@ const FactsCard: Component<IPlanet> = ({
       case 'three':
         setContent(geology.content);
         setSource(geology.source);
-        setPlanetImg(images.geology);
+        setPlanetImg(images.planet);
         break;
     }
   });
@@ -41,11 +50,24 @@ const FactsCard: Component<IPlanet> = ({
   return (
     <section class='lg:flex items-center mb-4 md:mb-6 lg:mb-20 mt-10 md:mt-20'>
       <div class='flex-1'>
-        <img
-          src={planetImg()}
-          alt='planet-mercury'
-          class='max-h-96 lg:max-w-md mx-auto'
-        />
+        {activeBtn() === 'three' ? (
+          <div class='relative'>
+            <img
+              src={planetImg()}
+              alt='planet-mercury'
+              class='max-h-96 lg:max-w-md mx-auto'
+            />
+            <div class='absolute bottom-0 inset-x-0 w-full'>
+              <img src={images.geology} class='max-h-28 mx-auto' />
+            </div>
+          </div>
+        ) : (
+          <img
+            src={planetImg()}
+            alt='planet-mercury'
+            class='max-h-96 lg:max-w-md mx-auto'
+          />
+        )}
       </div>
 
       <div class='flex-1'>
