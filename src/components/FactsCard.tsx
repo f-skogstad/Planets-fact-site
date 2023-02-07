@@ -18,7 +18,7 @@ const FactsCard: Component<Props> = ({
   images,
   btnColor,
 }) => {
-  const [activeBtn, setActiveBtn] = createSignal('three');
+  const [activeBtn, setActiveBtn] = createSignal('one');
   const [content, setContent] = createSignal(overview.content);
   const [source, setSource] = createSignal(overview.source);
   const [planetImg, setPlanetImg] = createSignal(images.planet);
